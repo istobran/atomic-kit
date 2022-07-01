@@ -33,3 +33,27 @@ export function toRemainTime(startTime: Date | number | string, endTime: Date | 
   const text = `${hour}:${minute}:${second}`;
   return { remain, text, hour, minute, second };
 }
+
+/**
+ * 仿照moment的接口，简单实现 formatDate
+ * @param         dateStamp   时间戳
+ * @param         durations   是否算时间段, 时间段会减8小时（东八区）
+ * @return
+ */
+export function moment(dateStamp: number, durations = false) {
+  const date = new Date(dateStamp);
+  return {
+    format(pattern?: string) {
+      const str = typeof pattern === 'string' ? pattern : 'yyyy-MM-dd';
+      if (!isNaN(date.getTime())) {
+        return str.replace(/yyyy/i, padZero(date.getFullYear()))
+          .replace(/MM/, padZero(date.getMonth() + 1))
+          .replace(/dd/i, padZero(date.getDate()))
+          .replace(/hh/i, durations ? padZero(date.getUTCHours()) : padZero(date.getHours()))
+          .replace('mm', padZero(date.getMinutes()))
+          .replace(/ss/i, padZero(date.getSeconds()));
+      }
+      return '';
+    },
+  };
+}
