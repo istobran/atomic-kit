@@ -1,6 +1,6 @@
 {
   "name": "atomic-kit",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "utility functions for js project",
   "main": "dist/atomic-kit.umd.js",
   "module": "dist/atomic-kit.esm.js",

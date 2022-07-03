@@ -1,5 +1,5 @@
 // 饿了么组件库的表格列的常用格式化函数
-import { date, dateTime, percent, price } from '@/filters';
+import { date, dateTime, percent, price } from '../filters';
 import { rearg } from 'lodash-es';
 
 export type Formatter<T> = (row: object, column: any, cellValue: T) => string;
