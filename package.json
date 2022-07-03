@@ -11,7 +11,9 @@
     "build": "rollup --config rollup.config.js",
     "release": "npm run build && bump -acpt && npm publish"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/istobran/atomic-kit.git"
@@ -35,6 +37,7 @@
     "ts-jest": "^28.0.5",
     "tslib": "^2.4.0",
     "typescript": "^4.7.4",
+    "version-bump-prompt": "^6.1.0",
     "vue": "^2.7.0",
     "vue-router": "^3.5.4"
   }
