@@ -2,12 +2,16 @@
   "name": "atomic-kit",
   "version": "0.0.0",
   "description": "utility functions for js project",
-  "main": "dist/index.js",
+  "main": "dist/atomic-kit.umd.js",
+  "module": "dist/atomic-kit.esm.js",
+  "types": "dist/types/src/main.d.ts",
   "scripts": {
     "test": "jest",
     "dev": "rollup --config rollup.config.js --watch",
-    "build": "rollup --config rollup.config.js"
+    "build": "rollup --config rollup.config.js",
+    "release": "npm run build && bump -acpt && npm publish"
   },
+  "files": ["dist"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/istobran/atomic-kit.git"
